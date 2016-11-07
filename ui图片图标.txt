@@ -1,0 +1,8 @@
+看手机的分辨率和尺寸。android 项目框架中 在 res 文件夹下面有 drawable-hdpi drawable-ldpi drawable-mdpi drawable-xhdpi drawable-xxhdpi，主流就是 hdpi 中等精度的屏幕。以主流 hdpi 为标准，设计 UI 素材的尺寸。然后 在此基础上，来设计更高精度的图片。
+DisplayMetrics metric = new DisplayMetrics();
+getWindowManager().getDefaultDisplay().getMetrics(metric);
+int width = metric.widthPixels;  // 屏幕宽度（像素）
+int height = metric.heightPixels;  // 屏幕高度（像素）
+float density = metric.density;  // 屏幕密度（0.75 / 1.0 / 1.5）
+int densityDpi = metric.densityDpi;  // 屏幕密度DPI（120 / 160 / 240）
+一般按照屏幕密度来设置你的图片尺寸。
